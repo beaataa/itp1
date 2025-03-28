@@ -1,3 +1,9 @@
+"""
+This script uses the Google Drive API to rename and transfer files from one folder to another. 
+It first authenticates using OAuth 2.0, either loading existing credentials from token.pickle or prompting the user to log in. 
+It then lists files in a specified source folder, renames them by adding the specified prefix, and moves them to the target folder. 
+"""
+
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
