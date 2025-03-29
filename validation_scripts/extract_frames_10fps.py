@@ -1,5 +1,5 @@
 """
-This script extracts frames from 30 FPS footage at 10-frame intervals.
+This script extracts frames at 10-frame intervals.
 """
 
 import cv2

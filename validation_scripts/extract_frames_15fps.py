@@ -1,3 +1,7 @@
+"""
+This script extracts frames at 15-frame intervals
+"""
+
 import cv2
 import os
 import glob
