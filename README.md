@@ -32,7 +32,7 @@ Our pipeline is designed to support integration with **Mech-Mind industrial came
 
 ---
 
-## 🧪 Model Performance
+## Current Model Performance
 
 ### YOLOv8
 - **(Mean Average Precision)mAP@0.5**: 0.589
