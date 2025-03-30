@@ -3,6 +3,15 @@
 **ITP Team 9**  
 **Objective**: Automate the detection and segmentation of EV battery components using deep learning for safer, faster disassembly in recycling workflows.
 
+Team Members:
+- Fun Kai Jun
+- Heng Yu Xin
+- Ng Wei Herng
+- Yeo Ya Xuan Beata
+
+Supervisors:
+Ang Jia Yuan, Lou Xin, Miao Xiao Xiao
+
 ---
 
 ### Overview
@@ -26,23 +35,13 @@ Our pipeline is designed to support integration with **Mech-Mind industrial came
 ## 🧪 Model Performance
 
 ### YOLOv8
-- **mAP@0.5**: 0.589
+- **(Mean Average Precision)mAP@0.5**: 0.589
 - Best Classes: Bolt (0.758), Busbar (0.755)
 - Challenging Classes: Nut (0.417), Cable (0.429)
 - Inference Time: ~5s (Tesla P100)
 
 ### DeepLabV3+
-- **Mean IoU**: 81.97%
+- **Mean IoU(Intersection over Union)**: 81.97%
 - Best Class: Plastic Film (90.8% IoU)
 - Lowest: Plastic Cover (64.8% IoU)
 
----
-
-Team Members:
-- Fun Kai Jun
-- Heng Yu Xin
-- Ng Wei Herng
-- Yeo Ya Xuan Beata
-
-Supervisors:
-Ang Jia Yuan, Lou Xin, Miao Xiao Xiao
