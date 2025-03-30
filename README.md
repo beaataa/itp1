@@ -13,19 +13,28 @@ Our pipeline is designed to support integration with **Mech-Mind industrial came
 ---
 
 ### Solution Process Flow
-[1] Data Collection
-        ↓
-[2] Data Annotation / Labeling
-        ↓
-[3] Data Preprocessing & Augmentation
-        ↓
-[4] Data Preparation
-        ↓
-[5] Model Training
-        ↓
-[6] Performance Evaluation
-        ↓
-[7] Results & Insights
+1. Data Collection
+2. Data Annotation / Labeling
+3. Data Preprocessing & Augmentation
+4. Data Preparation
+5. Model Training
+6. Performance Evaluation
+7. Results & Insights
+
+---
+
+## 🧪 Model Performance
+
+### YOLOv8
+- **mAP@0.5**: 0.589
+- Best Classes: Bolt (0.758), Busbar (0.755)
+- Challenging Classes: Nut (0.417), Cable (0.429)
+- Inference Time: ~5s (Tesla P100)
+
+### DeepLabV3+
+- **Mean IoU**: 81.97%
+- Best Class: Plastic Film (90.8% IoU)
+- Lowest: Plastic Cover (64.8% IoU)
 
 ---
 
