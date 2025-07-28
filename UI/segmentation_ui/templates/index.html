@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Segmentation UI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .image-pair {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .image-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-right: 15px;
+      margin-bottom: 5px;
+    }
+    .color-box {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <h2>Upload an image for segmentation</h2>
+  <input type="file" id="fileInput">
+  <button onclick="upload()">Upload</button>
+
+  <div class="image-pair">
+    <div class="image-column">
+      <h4>Original Image</h4>
+      <img id="orig" style="max-width: 480px;">
+    </div>
+    <div class="image-column">
+      <h4>Predicted Mask</h4>
+      <img id="mask" style="max-width: 480px;">
+    </div>
+  </div>
+
+  <div class="legend">
+    <div class="legend-item"><div class="color-box" style="background-color: rgb(0,0,0);"></div>Background</div>
+    <div class="legend-item"><div class="color-box" style="background-color: rgb(128,0,0);"></div>Bolt</div>
+    <div class="legend-item"><div class="color-box" style="background-color: rgb(0,128,0);"></div>Busbar</div>
+    <div class="legend-item"><div class="color-box" style="background-color: rgb(128,128,0);"></div>Cable</div>
+    <div class="legend-item"><div class="color-box" style="background-color: rgb(0,0,128);"></div>Connector</div>
+    <div class="legend-item"><div class="color-box" style="background-color: rgb(128,0,128);"></div>Nut</div>
+    <div class="legend-item"><div class="color-box" style="background-color: rgb(0,128,128);"></div>Plastic Film</div>
+    <div class="legend-item"><div class="color-box" style="background-color: rgb(128,128,128);"></div>Plastic Cover</div>
+  </div>
+
+  <script>
+    function upload() {
+      const file = document.getElementById('fileInput').files[0];
+      const formData = new FormData();
+      formData.append('image', file);
+
+      fetch('/upload', {
+        method: 'POST',
+        body: formData
+      })
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('orig').src = data.original;
+        document.getElementById('mask').src = data.mask;
+      });
+    }
+  </script>
+</body>
+</html>
